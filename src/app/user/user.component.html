@@ -1,0 +1,55 @@
+<h3>Posts</h3>
+    {{result}}
+    <div class="user-search">
+        <input type="text" class="form-control" placeholder="Search for..." [(ngModel)]="filterText" >
+    </div>
+    <table class="nowrap table table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+              <th>
+                  Id
+              </th>
+               <th>
+                  Title
+              </th>
+               <th>
+                  Body
+              </th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let post of posts | filter: filterText" (click)="goToProductDetails(post.id)">
+            <td>{{post.id}}</td>
+            <td>{{post.title}}</td>
+            <td>{{post.body}}</td>
+          </tr>
+        </tbody>
+    </table>
+
+    <!--<div>
+        <form #bookByIdForm= "ngForm" (ngSubmit)="searchPosts(bookByIdForm)">
+            <div> 
+            Enter Book Id: <input name="id" ngModel required #id="ngModel">
+            </div> 
+            <div> <br/> 	  
+            <button [disabled]="bookByIdForm.invalid">Submit</button>
+            </div>	  
+        </form> 
+    </div>  
+<br/>
+<div *ngIf="bookByIdForm.submitted">
+    <div *ngIf="post; else loading">
+	<table>
+	  <tr><th> Id</th> <th>Name</th>
+	  <tr>
+		<td>{{post.id}}</td> <td>{{post.title}}</td>
+	  </tr>
+	</table>				
+    </div>   
+    <ng-template #loading>
+	<div *ngIf="dataAvailableById; else notAvailable">
+	       Loading data...
+	</div>   
+	<ng-template #notAvailable> Data not Aavailable. </ng-template>   
+    </ng-template>   
+</div>-->

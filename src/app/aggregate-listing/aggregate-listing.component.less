@@ -1,0 +1,117 @@
+.aggregate-wrapper{
+    .aggregate-json {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-name: slideInUp;
+            display:none;
+    }
+     .aggregate-json.active {
+        display:block;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-name: slideInDown;
+    }
+    .panel-heading {
+        background-color: #141519;
+        border-color: #ddd;
+
+        h1 {
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+        }
+
+        span {
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+        }
+    }
+}
+
+.user-search input {
+    width: 200px;
+    border-radius: 100px;
+    font-size: 14px;
+    transition: 0.5s ease-in;
+    margin-bottom:30px;
+
+    &:focus{
+        width:240px;
+    }
+}
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -20%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flipInX {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    transform: perspective(400px);
+  }
+}
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  animation-name: flipInX;
+}
+
+.flash {
+  animation-name: flash;
+}
+
+.slideInUp {
+  animation-name: slideInUp;
+}
+
+.slideInDown {
+  animation-name: slideInDown;
+}
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}

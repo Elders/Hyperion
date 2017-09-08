@@ -1,0 +1,31 @@
+<div class="form-group">
+  <div class="user-search">
+        <input type="text" class="form-control" placeholder="Search for..." [(ngModel)]="aggrId" >
+    </div>
+
+    <button (click)="getAggregateId(aggrId)">
+      Check
+    </button> 
+</div>
+<div *ngIf="results" class="panel panel-default aggregate-wrapper">
+  <div class="panel-heading">
+    <h1>{{results.Result.BoundedContext}}</h1>
+    <span>{{results.Result.AggregateId}}</span>
+  </div>
+  <div class="panel-body">
+      <div *ngFor="let a of results.Result.Commits">
+        <div *ngFor="let b of a.Events;let i = index" class="">
+          <h3>{{b.EventName}}</h3>
+          <span (click)="b.active = !b.active">Show more</span>
+          <p>{{a.Timestamp}}</p>
+          <div [class.active]="b.active" class="aggregate-json slideInDown animated">
+            {{b.EventData | json}}
+          </div>
+            
+        </div>
+      </div>
+  </div>
+</div>
+
+
+    
