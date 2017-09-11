@@ -14,8 +14,8 @@ export class AggregateServiceService {
                .map(res =>res.json() as IResults);
   }
 
-  getAggregatesId(id: string): Observable<IResults>{
-    return this.http.get('http://192.168.10.160:9000/api/EventStore/explore?id=' + id)
+  getAggregatesId(url: string, id: string): Observable<IResults>{
+    return this.http.get(url + id)
                .map(res =>res.json() as IResults);
   }
 }

@@ -2,7 +2,6 @@ import { Component, Pipe, PipeTransform, OnInit } from '@angular/core';
 import {AggregateServiceService} from '../services/aggregate-service.service';
 import {IResults} from '../services/infra';
 import {IResult} from '../services/infra';
-import {FilterArrayPipe} from '../filter.pipe';
 import { Router, ActivatedRoute } from '@angular/router';
 import { JsonPipe } from '@angular/common';
 
@@ -40,8 +39,8 @@ export class AggregateListingComponent implements OnInit {
           console.log(this.results);
       });
   }
-  getAggregateId (id: string){
-     this.aggrService.getAggregatesId(id).subscribe(x => {
+  getAggregateId (url: string, id: string){
+     this.aggrService.getAggregatesId(url, id).subscribe(x => {
           this.results = x;
           console.log(this.results);
       });

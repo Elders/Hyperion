@@ -5,7 +5,6 @@ import {HttpModule} from '@angular/http';
 
 import { AppComponent }  from './app.component';
 import { AboutComponent }  from './components/about.component';
-import {FilterArrayPipe} from './filter.pipe';
 import {routing} from './app.routing';
 import { Angular2FontawesomeModule } from 'angular2-fontawesome/angular2-fontawesome';
 import { SiteHeaderTopComponent } from './site-header-top/site-header-top.component';
@@ -17,7 +16,7 @@ import { AggregateListingComponent } from './aggregate-listing/aggregate-listing
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpModule, routing, Angular2FontawesomeModule ],
-  declarations: [ AppComponent, AboutComponent, FilterArrayPipe, SiteHeaderTopComponent, LeftSidebarMenuComponent, MainComponent, HomePageComponent, AggregateListingComponent ],
+  declarations: [ AppComponent, AboutComponent, SiteHeaderTopComponent, LeftSidebarMenuComponent, MainComponent, HomePageComponent, AggregateListingComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
