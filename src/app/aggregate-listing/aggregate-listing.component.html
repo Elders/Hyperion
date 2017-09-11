@@ -23,7 +23,7 @@
   <div class="panel-body">
       <div *ngFor="let a of results.Result.Commits">
         <div *ngFor="let b of a.Events;let i = index" class="">
-          <h3>{{b.EventName}} <span class="aggr-show" (click)="b.active = !b.active"><fa [name]="'plus-circle'"></fa></span></h3>
+          <h3> <span class="aggr-show" (click)="b.active = !b.active"><fa [name]="'plus-circle'"></fa></span> {{b.EventName}}</h3>
           
           <p>{{a.Timestamp}}</p>
           <pre [class.active]="b.active" class="aggregate-json slideInDown animated">
