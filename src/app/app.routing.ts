@@ -6,7 +6,7 @@ import {AggregateListingComponent} from './aggregate-listing/aggregate-listing.c
 
 const appRoutes: Routes = [
     {
-        path:'',
+        path:'home',
         component: HomePageComponent
     },
     {

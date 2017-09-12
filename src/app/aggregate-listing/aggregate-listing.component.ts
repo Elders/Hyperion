@@ -13,14 +13,15 @@ import { JsonPipe } from '@angular/common';
 })
 export class AggregateListingComponent implements OnInit {
   results: IResults;
-  private router: Router;
-  private aggregateNumber: number;
-  private show: boolean;
-  private aggrId: string;
+  public router: Router;
+  public aggregateNumber: number;
+  public show: boolean;
+  public aggrId: string;
+  public url: string;
 
   constructor(
-      private r: Router,
-      private aggrService: AggregateServiceService) {
+      public r: Router,
+      public aggrService: AggregateServiceService) {
       this.show = false;
       this.router = r;
    }
